@@ -1,11 +1,40 @@
-name: CD Placeholder
+name: CI Pipeline
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  placeholder:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Placeholder step
-        run: echo "CD pipeline will be added after Kubernetes and Argo CD setup"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install backend dependencies
+        working-directory: app/backend
+        run: npm ci
+
+      - name: Check backend source syntax
+        working-directory: app/backend
+        run: node --check src/index.js
+
+      - name: Install frontend dependencies
+        working-directory: app/frontend
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: app/frontend
+        run: npm run build
+
+      - name: Success notification placeholder
+        if: success()
+        run: echo "CI pipeline completed successfully"
