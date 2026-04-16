@@ -1,0 +1,4 @@
+kubeconfig_path      = "~/.kube/config"
+app_namespace        = "taskmanager"
+monitoring_namespace = "monitoring"
+argocd_namespace     = "argocd"

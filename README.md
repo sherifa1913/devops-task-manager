@@ -30,3 +30,12 @@ Will be added as the project is implemented.
 
 ## Architecture diagram
 Will be added in `docs/architecture.png`.
+
+## Infrastructure as Code
+
+Terraform is used to provision the base Kubernetes namespaces for:
+- the application
+- monitoring
+- Argo CD
+
+Example files are located in the `terraform/` directory.
