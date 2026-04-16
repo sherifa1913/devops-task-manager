@@ -1,1 +1,32 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taskmanager-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taskmanager-backend
+  template:
+    metadata:
+      labels:
+        app: taskmanager-backend
+    spec:
+      containers:
+        - name: backend
+          image: sherifa1913/taskmanager-backend:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PORT
+              value: "5000"
+            - name: DB_HOST
+              value: postgres
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              value: taskmanager
+            - name: DB_USER
+              value: postgres
+            - name: DB_PASSWORD
+              value: postgres

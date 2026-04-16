@@ -1,1 +1,19 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taskmanager-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taskmanager-frontend
+  template:
+    metadata:
+      labels:
+        app: taskmanager-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: sherifa1913/taskmanager-frontend:latest
+          ports:
+            - containerPort: 80
