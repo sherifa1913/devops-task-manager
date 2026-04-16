@@ -2,6 +2,8 @@
 
 A web-based task manager application built to demonstrate a complete DevOps lifecycle.
 
+![Infrastructure Diagram](docs/infrastructure-diagram.png)
+
 ## Problem it solves
 This project helps users create, view, update, and delete tasks through a web interface.
 
@@ -28,11 +30,7 @@ This project helps users create, view, update, and delete tasks through a web in
 ## Run instructions
 Will be added as the project is implemented.
 
-## Architecture diagram
-Will be added in `docs/architecture.png`.
-
 ## Infrastructure as Code
-
 Terraform is used to provision the base Kubernetes namespaces for:
 - the application
 - monitoring
