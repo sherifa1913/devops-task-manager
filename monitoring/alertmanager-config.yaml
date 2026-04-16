@@ -1,0 +1,7 @@
+route:
+  receiver: "webhook-notifications"
+
+receivers:
+  - name: "webhook-notifications"
+    webhook_configs:
+      - url: "http://example-webhook.local/alert"

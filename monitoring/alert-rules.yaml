@@ -1,0 +1,11 @@
+groups:
+  - name: taskmanager-alerts
+    rules:
+      - alert: BackendDown
+        expr: up{job="taskmanager-backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Task Manager backend is down"
+          description: "Prometheus cannot scrape the backend metrics endpoint for more than 1 minute."
