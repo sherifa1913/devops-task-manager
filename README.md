@@ -6,8 +6,8 @@ DevOps Task Manager is a web-based task management application created to demons
 
 ## Problem it solves
 
-The project helps users manage daily tasks through a simple web interface.  
-Users can create, view, update, complete, and delete tasks.  
+The project helps users manage daily tasks through a simple web interface.
+Users can create, view, update, complete, and delete tasks.
 The main goal of the project is not only the application itself, but also the complete DevOps pipeline around it.
 
 ## Architecture Overview
