@@ -1,2 +1,32 @@
-# devops-task-manager
-DevOps project with CI/CD and Kubernetes
+# DevOps Task Manager
+
+A web-based task manager application built to demonstrate a complete DevOps lifecycle.
+
+## Problem it solves
+This project helps users create, view, update, and delete tasks through a web interface.
+
+## Planned architecture
+- Frontend: React
+- Backend: Node.js + Express
+- Database: PostgreSQL
+- CI: GitHub Actions
+- CD: Argo CD
+- Orchestration: Kubernetes
+- IaC: Terraform
+- Observability: Prometheus + Loki + Grafana
+- Alerts: Webhook notifications
+
+## Project structure
+- `app/frontend` - frontend application
+- `app/backend` - backend API
+- `k8s` - Kubernetes manifests
+- `terraform` - infrastructure as code
+- `.github/workflows` - CI/CD pipelines
+- `docs` - diagrams and screenshots
+- `monitoring` - monitoring and alerting configs
+
+## Run instructions
+Will be added as the project is implemented.
+
+## Architecture diagram
+Will be added in `docs/architecture.png`.
