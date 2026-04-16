@@ -1,39 +1,83 @@
 # DevOps Task Manager
 
-A web-based task manager application built to demonstrate a complete DevOps lifecycle.
+DevOps Task Manager is a web-based task management application created to demonstrate a full DevOps lifecycle, including source control, pre-commit validation, CI/CD, containerization, Kubernetes deployment, Infrastructure as Code, observability, alerting, and configuration/secrets management.
 
 ![Infrastructure Diagram](docs/infrastructure-diagram.png)
 
 ## Problem it solves
-This project helps users create, view, update, and delete tasks through a web interface.
 
-## Planned architecture
-- Frontend: React
-- Backend: Node.js + Express
-- Database: PostgreSQL
-- CI: GitHub Actions
-- CD: Argo CD
-- Orchestration: Kubernetes
-- IaC: Terraform
-- Observability: Prometheus + Loki + Grafana
-- Alerts: Webhook notifications
+The project helps users manage daily tasks through a simple web interface.  
+Users can create, view, update, complete, and delete tasks.  
+The main goal of the project is not only the application itself, but also the complete DevOps pipeline around it.
 
-## Project structure
-- `app/frontend` - frontend application
-- `app/backend` - backend API
-- `k8s` - Kubernetes manifests
-- `terraform` - infrastructure as code
-- `.github/workflows` - CI/CD pipelines
-- `docs` - diagrams and screenshots
-- `monitoring` - monitoring and alerting configs
+## Architecture Overview
 
-## Run instructions
-Will be added as the project is implemented.
+The system consists of the following main components:
 
-## Infrastructure as Code
-Terraform is used to provision the base Kubernetes namespaces for:
-- the application
-- monitoring
-- Argo CD
+- **Frontend** - React application
+- **Backend** - Node.js + Express REST API
+- **Database** - PostgreSQL
+- **CI** - GitHub Actions
+- **Container Registry** - Docker Hub
+- **CD** - Argo CD
+- **Orchestration** - Kubernetes
+- **Infrastructure as Code** - Terraform
+- **Observability** - Prometheus, Loki, Grafana
+- **Alerting** - Alertmanager with webhook notifications
 
-Example files are located in the `terraform/` directory.
+## Features
+
+- Create tasks
+- View all tasks
+- Mark tasks as completed
+- Delete tasks
+- Health endpoint for backend
+- Metrics endpoint for Prometheus scraping
+
+## Technologies and Versions
+
+- **Node.js** 22
+- **React** 19
+- **Vite** 8
+- **Express** 5
+- **PostgreSQL** 16
+- **Docker**
+- **Docker Compose**
+- **Kubernetes**
+- **GitHub Actions**
+- **Docker Hub**
+- **Argo CD**
+- **Terraform**
+- **Prometheus**
+- **Loki**
+- **Grafana**
+- **Alertmanager**
+
+## Project Structure
+
+```text
+devops-task-manager/
+├── app/
+│   ├── backend/
+│   │   ├── src/
+│   │   ├── Dockerfile
+│   │   ├── package.json
+│   │   └── .env.example
+│   └── frontend/
+│       ├── src/
+│       ├── Dockerfile
+│       ├── package.json
+│       └── .env.example
+├── docs/
+│   └── infrastructure-diagram.png
+├── k8s/
+│   ├── base/
+│   └── overlays/
+├── terraform/
+├── monitoring/
+├── .github/
+│   └── workflows/
+├── .pre-commit-config.yaml
+├── docker-compose.yml
+├── .gitignore
+└── README.md
